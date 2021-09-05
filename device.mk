@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/samsung/a71
+DEVICE_PATH := device/samsung/m51
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -17,17 +17,7 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(DEVICE_PATH)/overlay-lineage/lineage-sdk
-
-# Fingerprint feature
-PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.a71
-
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    $(DEVICE_PATH)/overlay
 
 # Audio
 PRODUCT_COPY_FILES += \
